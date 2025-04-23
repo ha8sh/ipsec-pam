@@ -23,7 +23,7 @@ mv /etc/ipsec.conf2 /etc/ipsec.conf
 
 
 
-mkdir /etc/raddb
+mkdir -p /etc/raddb
 touch /etc/raddb/server
 
 systemctl restart xl2tpd

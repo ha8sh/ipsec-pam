@@ -10,6 +10,18 @@ session required        /opt/pam_radius_auth.so
 
 EOF
 
+rm /etc/ipsec.secret
+cat << EOF > /etc/ipsec.secret
+%any  %any  : PSK "123456789"
+EOF
+
+sed '/^cisco-unity=.*/a xauthby=pam' /etc/ipsec.conf
+sed '/^\s cisco-unity=.*/a \  xauthby=pam' /etc/ipsec.conf | tee /etc/ipsec.conf2
+rm /etc/ipsec.conf
+mv /etc/ipsec.conf2 /etc/ipsec.conf
+
+
+
 
 mkdir /etc/raddb
 touch /etc/raddb/server

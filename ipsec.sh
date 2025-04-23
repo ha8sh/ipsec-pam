@@ -10,5 +10,9 @@ session required        /opt/pam_radius_auth.so
 
 EOF
 
+
 mkdir /etc/raddb
 touch /etc/raddb/server
+
+systemctl restart xl2tpd
+systemctl restart ipsec

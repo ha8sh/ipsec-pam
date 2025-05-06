@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget https://github.com/ha8sh/ipsec-pam/blob/main/pam_radius_auth.so -O /opt/pam_radius_auth.so
+wget https://github.com/ha8sh/ipsec-pam/raw/refs/heads/main/pam_radius_auth.so -O /opt/pam_radius_auth.so
 rm /etc/pam.d/pluto
 
 cat << EOF > /etc/pam.d/pluto
